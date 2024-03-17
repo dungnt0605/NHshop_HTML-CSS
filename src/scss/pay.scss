@@ -1,0 +1,118 @@
+@import "./index.scss";
+@import "../scss/responsive.scss";
+
+.bill {
+  padding: 65px 0;
+}
+.billdetail {
+  @include flex_row(space-between, start, nowrap);
+  &__detail,
+  &__order {
+    width: 48.08%;
+  }
+
+  &__detail {
+    padding: 0 6.9%;
+    padding-right: 5.3%;
+    padding-top: 30px;
+
+    h3 {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 54px;
+      letter-spacing: 0.03rem;
+      margin-bottom: 40px;
+    }
+    input,
+    select {
+      border-radius: 10px;
+      border: 1px solid #9f9f9f;
+      width: 100%;
+      height: 75px;
+      padding: 0 5.7% !important;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .forminput {
+      display: flex;
+      flex-direction: column;
+      margin: 35px 0;
+      gap: 22.5px;
+    }
+  }
+
+  &__name {
+    @include flex_row(space-between, center, nowrap);
+    gap: 6.5%;
+    .__firstname,
+    .__lastname {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 22.5px;
+    }
+  }
+
+  &__order {
+    padding: 83px 2%;
+  }
+  &__orderdetail {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    .orderitem {
+      @include flex_row(space-between, center, nowrap);
+      margin-bottom: 20px;
+    }
+    .__head {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 36px;
+    }
+    .__product p {
+      color: #9f9f9f;
+    }
+    .__total span {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 36px;
+      color: #b88e2f;
+    }
+  }
+  .__crossline {
+    border: 1px solid #d9d9d9;
+    width: 100%;
+    height: 0.5px;
+    margin-bottom: 24px;
+  }
+  .__banktransfer,
+  .__cashondelivery {
+    margin-bottom: 20px;
+    input {
+      margin-right: 2%;
+      margin-bottom: 15px;
+    }
+    p {
+      color: #9f9f9f;
+    }
+  }
+  .__orderbtn {
+    margin-top: 40px;
+    @include flex_row(center, center, nowrap);
+    button {
+      cursor: pointer;
+      width: 58%;
+      height: 64px;
+      border-radius: 15px;
+      font-size: 20px;
+      border: 1px solid #000;
+      &:hover {
+        background: #000;
+        color: #fff;
+      }
+      &:active {
+        transform: translateY(1.5px);
+      }
+    }
+  }
+}

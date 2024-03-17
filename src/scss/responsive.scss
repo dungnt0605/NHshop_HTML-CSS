@@ -1,0 +1,49 @@
+@import "../scss/index.scss";
+// @import "../scss/home.scss";
+
+@media (max-width: 1300px) {
+  // product [Page: Home, Products, DetailProduct]
+  .product {
+    &__row {
+      @include grid-wap(3, start);
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  //   header
+  .navbar {
+    display: none !important;
+  }
+  .nav__mobile {
+    @include flex_row(space-between, center, none);
+    margin: 10px 30px;
+  }
+  // product [Page: Home, Products, DetailProduct]
+  .product {
+    &__row {
+      @include grid-wap(2, start);
+    }
+  }
+
+  //    footer
+  .footer__list {
+    @include grid-wap(2, start);
+  }
+}
+@media (max-width: 623px) {
+  html {
+    font-size: 10px;
+  }
+
+  //home - shop
+  .shop {
+    &__item {
+      @include grid-wap(1, center);
+    }
+  }
+  //   footer
+  .footer__list {
+    @include grid-wap(1, start);
+  }
+}

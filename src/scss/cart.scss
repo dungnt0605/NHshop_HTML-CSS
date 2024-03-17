@@ -1,0 +1,121 @@
+@import "../scss/index.scss";
+@import "../scss/responsive.scss";
+
+.infocart {
+	&__info {
+		margin-top: 73px;
+		@include flex_row(space-between, start, nowrap);
+	}
+	&__list {
+		width: 64.5%;
+	}
+	&__listitem {
+		height: 105px;
+		margin-bottom: 20px;
+	}
+	&__listheader {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 24px;
+		height: 55px;
+		background: #f9f1e7;
+		margin-bottom: 56px;
+	}
+	&__listheader,
+	&__listitem {
+		@include flex_row(start, center, nowrap);
+		.img {
+			width: 17%;
+		}
+		.name {
+			width: 21.8%;
+		}
+		.price {
+			width: 21.5%;
+		}
+		.quantity {
+			width: 13.2%;
+		}
+		.subtotal {
+			width: 20%;
+		}
+		.remove {
+			width: 6.5%;
+			cursor: pointer;
+			&:active {
+				transform: translateY(1.5px);
+			}
+		}
+	}
+	&__quantityitem {
+		@include flex_row(start, center, nowrap);
+		width: 40%;
+		gap: 10%;
+		margin-left: 15.5%;
+		border: 1px solid #9f9f9f;
+		padding: 3% 5%;
+		border-radius: 5px;
+		.minus,
+		.plus {
+			&:hover {
+				cursor: pointer;
+			}
+			&:active {
+				transform: translateY(2px);
+			}
+		}
+	}
+	&__imageitem {
+		@include containimage(105px, 105px, 10px);
+	}
+	&__removeitem {
+		@include containimage(21px, 21.88px, none);
+	}
+	&__checkout {
+		background: #f9f1e7;
+		width: 33%;
+		padding: 6%;
+		padding-top: 1.5%;
+		text-align: center;
+		button {
+			width: 100%;
+			border: 1px solid #000000;
+			height: 60px;
+			border-radius: 15px;
+			font-size: 20px;
+			&:hover {
+				cursor: pointer;
+				background: #000;
+				color: #fff;
+			}
+		}
+	}
+	&__titletotal {
+		font-size: 32px;
+		font-weight: 600;
+		line-height: 48px;
+		margin-bottom: 30px;
+	}
+	&__subtotalcart,
+	&__totalcart {
+		@include flex_row(space-between, center, nowrap);
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 24px;
+		margin-bottom: 30px;
+	}
+	&__totalcart {
+		span {
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 30px;
+			color: #b88e2f;
+		}
+	}
+	.__crosslinecheckout {
+		background: #d9d9d9;
+		width: 100%;
+		height: 0.5px;
+		margin: 30px 0;
+	}
+}

@@ -1,0 +1,108 @@
+@import "./index.scss";
+@import "../scss/responsive.scss";
+
+.signin,
+.signup {
+  width: 100%;
+  @include flex_row(center, center, nowrap);
+  height: 100vh;
+  background: #d9d9d9;
+  form {
+    padding: 5%;
+    border-radius: 15px;
+    position: relative;
+    background: #fff;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    .cancer {
+      @include containimage(21px, 21px, none);
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+    .title {
+      text-align: center;
+      p {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 45px;
+        color: #b88e2f;
+      }
+    }
+    .forminput {
+      margin: 10px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      label {
+        color: #b88e2f;
+      }
+      input {
+        height: 60px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        outline: none;
+        padding: 0 20px;
+      }
+    }
+    .submit {
+      margin-top: 30px;
+      @include flex_row(center, center, nowrap);
+      button {
+        background: #f9f1e7;
+        width: 150px;
+        height: 64px;
+        font-weight: 700;
+        border-radius: 15px;
+        font-size: 20px;
+        cursor: pointer;
+        &:hover {
+          background: #000;
+          color: white;
+        }
+      }
+    }
+  }
+
+  &__connectsocial {
+    margin-top: 30px;
+    @include flex_row(space-evenly, center, nowrap);
+    gap: 10%;
+    .__connectfb,
+    .__connectgg {
+      width: 40%;
+      height: 64px;
+      border-radius: 15px;
+      @include flex_row(center, center, nowrap);
+      .logo {
+        @include containimage(20px, 20px, none);
+        margin-right: 10px;
+      }
+      cursor: pointer;
+      &:active {
+        transform: translateY(1.5px);
+      }
+    }
+
+    .__connectfb {
+      background: #0171d3;
+      p {
+        color: #fff;
+      }
+    }
+
+    .__connectgg {
+      border: 1px solid #000000;
+    }
+  }
+  .switchsignup,
+  .switchlogin {
+    margin-top: 30px;
+    @include flex_row(center, center, nowrap);
+    a {
+      text-decoration: underline;
+    }
+  }
+}

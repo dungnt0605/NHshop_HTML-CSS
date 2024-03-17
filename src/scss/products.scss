@@ -1,0 +1,97 @@
+@import "./index.scss";
+@import "../scss/responsive.scss";
+
+.filter {
+  @include flex_row(space-between, center, nowrap);
+  height: 100px;
+  padding: 0 5.6%;
+  width: $max-width-screen;
+  background: #f9f1e7;
+  margin-bottom: 45px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  &__byChoose {
+    span:hover {
+      cursor: pointer;
+    }
+    @include flex_row(space-between, center, nowrap);
+    gap: 30px;
+    .__filtering {
+      @include flex_row(space-between, center, nowrap);
+      gap: 15px;
+      img {
+        width: 19.05px;
+        height: 16.67px;
+      }
+    }
+    .__gridfil {
+      img {
+        width: 16.33px;
+        height: 16.33px;
+      }
+    }
+    .__listfil img {
+      width: 21px;
+      height: 19.33px;
+    }
+    .__resultOption {
+      height: 37px;
+      @include flex_row(end, center, nowrap);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      padding-left: 30px;
+      border-left: 2px solid rgba(0, 0, 0, 0.3);
+    }
+  }
+  &__byKeyword {
+    @include flex_row(end, center, nowrap);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    gap: 25px;
+    .__resultsShowing {
+      background: #fff;
+      @include flex_row(center, center, nowrap);
+      height: 55px;
+      width: 55px;
+      color: #9f9f9f;
+    }
+    .__inputFilKeyword {
+      height: 55px;
+      width: 188px;
+      outline: none;
+      padding: 10px 20px;
+      color: #9f9f9f;
+    }
+  }
+}
+
+.btnList {
+  @include flex_row(center, center, nowrap);
+  width: $max-width-screen;
+  gap: 35px;
+  span {
+    background: #f9f1e7;
+    border-radius: 10px;
+    height: 60px;
+    @include flex_row(center, center, nowrap);
+  }
+  span:hover {
+    background: #b88e2f;
+    color: #fff;
+    cursor: pointer;
+  }
+  span:active {
+    transform: translateY(2px);
+  }
+  &__item {
+    width: 60px;
+  }
+  &__back,
+  &__next {
+    width: fit-content;
+    padding: 0 30px;
+  }
+}
