@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Nav = () => {
   return (
@@ -14,10 +14,10 @@ const Nav = () => {
             </div>
             <ul className='navbar__main'>
               <li>
-                <Link to={'/'}>Home</Link>
+                <NavLink to={'/'}>Home</NavLink>
               </li>
               <li>
-                <Link to={'/products'}>Shop</Link>
+                <NavLink to={'/products'}>Shop</NavLink>
               </li>
               <li>
                 <a href='#'>About</a>
@@ -28,24 +28,24 @@ const Nav = () => {
             </ul>
             <ul className='navbar__features'>
               <li>
-                <Link to={'/signin'}>
+                <NavLink to={'/signin'}>
                   <img src='./src/assets/icons/mdi_account-alert-outline.png' alt='' />
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to={'/pay'}>
+                <NavLink to={'/pay'}>
                   <img src='./src/assets/icons/akar-icons_search.png' alt='' />
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to={'/detail'}>
+                <NavLink to={'/detail'}>
                   <img src='./src/assets/icons/akar-icons_heart.png' alt='' />
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to={'/cart'}>
+                <NavLink to={'/cart'}>
                   <img src='./src/assets/icons/ant-design_shopping-cart-outlined.png' alt='' />
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -67,16 +67,16 @@ const Nav = () => {
             </label>
             <ul className='menu-mobile_item '>
               <li>
-                <Link to={'/'}>Home</Link>
+                <NavLink to={'/'}>Home</NavLink>
               </li>
               <li>
-                <Link to={'/products'}>Shop</Link>
+                <NavLink to={'/products'}>Shop</NavLink>
               </li>
               <li>
-                <Link to={'/'}>About</Link>
+                <NavLink to={'/'}>About</NavLink>
               </li>
               <li>
-                <Link to={'/'}>Contact</Link>
+                <NavLink to={'/'}>Contact</NavLink>
               </li>
             </ul>
           </div>

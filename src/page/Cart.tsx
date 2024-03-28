@@ -1,15 +1,10 @@
-import React from 'react'
-import Nav from '~/componer/nav'
+import { Header } from '@/components'
 
 const Cart = () => {
   return (
     <div>
-      <section className='header'>
-        <Nav />
-        <div className='header__subbanner'>
-          <img src='https://picsum.photos/id/1/1440/500' srcSet='https://picsum.photos/id/1/1440/500 2x' alt='banner' />
-        </div>
-      </section>
+      <Header />
+
       <section className='infocart'>
         <div className='container'>
           <div className='infocart__info'>
@@ -25,7 +20,7 @@ const Cart = () => {
               <li className='infocart__listitem'>
                 <div className='img'>
                   <div className='infocart__imageitem'>
-                    <img src='https://picsum.photos/200/200' alt='' />
+                    <img src='https://picsum.photos/500/500' alt='' />
                   </div>
                 </div>
                 <p className='infocart__nameitem name'>Asgaard sofa</p>

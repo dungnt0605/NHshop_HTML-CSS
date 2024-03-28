@@ -73,7 +73,7 @@ a {
       height: 100%;
     }
   }
-  &__subbanner {
+  .header__subbanner {
     width: $max-width-screen;
     max-height: 315px;
     object-fit: cover;
@@ -131,6 +131,9 @@ a {
         display: block;
         border: 3px solid transparent;
         padding: 4px 0;
+        .active {
+          border-bottom: 3px solid #000;
+        }
       }
       li:hover {
         a {
@@ -215,7 +218,7 @@ a {
 
 // product [Page: Home, Products, DetailProduct]
 .product {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   text-align: left;
   font-weight: 500;
   margin-top: 30px;
@@ -237,11 +240,12 @@ a {
     }
   }
   &__row {
-    @include flex_row(space-between, center, none);
+    @include grid-wap(4, center);
     // @include grid-wap(4, space-between, start, none);
-    // grid-gap: 4rem;
+    grid-gap: 4rem;
     margin-bottom: 35px;
   }
+
   &__item {
     max-width: 285px;
     height: 446px;
@@ -315,6 +319,7 @@ a {
   }
   &__item:hover {
     cursor: pointer;
+    box-shadow: 1px 1px 90px rgba(0, 0, 0, 0.2);
   }
   &__item:hover > &__feature {
     z-index: 1;

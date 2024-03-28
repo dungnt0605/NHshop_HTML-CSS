@@ -1,38 +1,46 @@
-import React from 'react'
-import Nav from '~/componer/nav'
+import { getProductsById } from '@/services/product'
+import { useQuery } from '@tanstack/react-query'
+import { useParams } from 'react-router-dom'
 
 const Detailpro = () => {
+  const { slug } = useParams()
+
+  const {
+    data: proId,
+    isLoading,
+    isError
+  } = useQuery({
+    queryKey: ['PRODUCT_KEY', slug],
+    queryFn: async () => await getProductsById(slug as string)
+  })
+
+  if (isLoading) return <p>Loading...</p>
+  if (isError) return <p>Erorr</p>
+  console.log(proId)
+
   return (
     <div>
-      <Nav />
       <section className='detailproduct'>
         <div className='container'>
           <div className='detailproduct__main'>
             <div className='detailproduct__images'>
               <ul className='detailproduct__thumbnails'>
-                <li className='detailproduct__thumbitems'>
-                  <img src='https://picsum.photos/285/300' alt='' />
-                </li>
-                <li className='detailproduct__thumbitems'>
-                  <img src='https://picsum.photos/285/300' alt='' />
-                </li>
-                <li className='detailproduct__thumbitems'>
-                  <img src='https://picsum.photos/285/300' alt='' />
-                </li>
-                <li className='detailproduct__thumbitems'>
-                  <img src='https://picsum.photos/285/300' alt='' />
-                </li>
+                {proId?.gallery?.map((gal) => (
+                  <li className='detailproduct__thumbitems'>
+                    <img src={gal} alt='' className='img-fluid ' />
+                  </li>
+                ))}
               </ul>
               <div className='detailproduct__showingImage'>
-                <img src='https://picsum.photos/285/300' alt='' />
+                <img src={proId.image} alt='' className='img-fluid ' />
               </div>
             </div>
             <div className='detailproduct__info'>
               <div className='detailproduct__mainInfo'>
-                <p className='detailproduct__name'>Asgaard sofa</p>
+                <p className='detailproduct__name'>{proId.name}</p>
                 <div className='detailproduct__price'>
-                  <span className='detailproduct__newprice'>25.000.000đ</span>
-                  <span className='detailproduct__oldprice'>25.000.000đ</span>
+                  <span className='detailproduct__newprice'>{proId?.price - (proId.price * proId.discount) / 100}</span>
+                  <span className='detailproduct__oldprice'>{proId.price}</span>
                 </div>
                 <div className='detailproduct__vote'>
                   <div className='detailproduct__stars'>
@@ -44,10 +52,7 @@ const Detailpro = () => {
                   </div>
                   <span className='detailproduct__totalvote'> 5 Customer Review </span>
                 </div>
-                <p className='detailproduct__introduce'>
-                  Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted
-                  hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.
-                </p>
+                <p className='detailproduct__introduce'>{proId.description}</p>
                 <div className='detailproduct__sizes'>
                   <p>Size</p>
                   <div className='detailproduct__sizebtns'>
@@ -94,7 +99,7 @@ const Detailpro = () => {
                 <li>
                   <p>Category</p>
                   <span>:</span>
-                  <span>Sofas</span>
+                  <span>{proId.category}</span>
                 </li>
                 <li>
                   <p>Tags</p>
@@ -164,7 +169,7 @@ const Detailpro = () => {
                   <p>-50%</p>
                 </div>
                 <div className='product__imageItem'>
-                  <img src='https://picsum.photos/id/55/285/300' alt='' />
+                  <img src='https://picsum.photos/285/300' alt='' />
                 </div>
                 <div className='product__infoItem'>
                   <p className='product__nameItem'>Syltherine</p>
@@ -200,7 +205,7 @@ const Detailpro = () => {
                   <p>New</p>
                 </div>
                 <div className='product__imageItem'>
-                  <img src='https://picsum.photos/id/55/285/300' alt='' />
+                  <img src='https://picsum.photos/285/300' alt='' />
                 </div>
                 <div className='product__infoItem'>
                   <p className='product__nameItem'>Syltherine</p>
@@ -233,7 +238,7 @@ const Detailpro = () => {
               {/* End Prod  */}
               <div className='product__item'>
                 <div className='product__imageItem'>
-                  <img src='https://picsum.photos/id/55/285/300' alt='' />
+                  <img src='https://picsum.photos/285/300' alt='' />
                 </div>
                 <div className='product__infoItem'>
                   <p className='product__nameItem'>Syltherine</p>
@@ -266,7 +271,7 @@ const Detailpro = () => {
               {/* End Prod  */}
               <div className='product__item'>
                 <div className='product__imageItem'>
-                  <img src='https://picsum.photos/id/55/285/300' alt='' />
+                  <img src='https://picsum.photos/285/300' alt='' />
                 </div>
                 <div className='product__infoItem'>
                   <p className='product__nameItem'>Syltherine</p>

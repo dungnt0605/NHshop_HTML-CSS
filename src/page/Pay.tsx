@@ -1,15 +1,9 @@
-import React from 'react'
-import Nav from '~/componer/nav'
+import { Header } from '@/components'
 
 const Pay = () => {
   return (
     <div>
-      <section className='header'>
-        <Nav />
-        <div className='header__subbanner'>
-          <img src='https://picsum.photos/id/1/1440/500' srcSet='https://picsum.photos/id/1/1440/500 2x' alt='banner' />
-        </div>
-      </section>
+      <Header />
       <section className='bill'>
         <div className='container'>
           <div className='billdetail'>

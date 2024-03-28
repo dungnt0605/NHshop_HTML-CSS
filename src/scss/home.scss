@@ -1,9 +1,9 @@
-@import "../scss/index.scss";
-@import "../scss/responsive.scss";
+@import '../scss/index.scss';
+@import '../scss/responsive.scss';
 
 //shop
 .shop {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   margin: 50px 0;
   &__title {
     padding: 15px 0;
@@ -17,14 +17,14 @@
     row-gap: 35px;
     // 605 470
     a {
-      @include containimage(48.5%, 30rem, none);
+      @include containimage(48.5%, 20rem, none);
     }
   }
 }
 
 // blog
 .blog {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   text-align: left;
   font-weight: 500;
   margin: 50px 0;
