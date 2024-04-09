@@ -1,8 +1,7 @@
+import { IProduct } from '@/interface/Products'
 import { getAllProducts } from '@/services/product'
 import { useQuery } from '@tanstack/react-query'
-import React from 'react'
 import { Link } from 'react-router-dom'
-import { IProduct } from '@/interface/Products'
 
 type ProductProps = {
   featured?: boolean

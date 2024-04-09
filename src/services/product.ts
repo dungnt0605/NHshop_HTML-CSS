@@ -1,7 +1,7 @@
 import instance from '@/config/axios'
 import { IProduct } from '@/interface/Products.ts'
 
-export const getAllProducts = async (): Promise<IProduct[]> => {
+export const getAllProducts = async (): Promise<IProduct[] | undefined> => {
   try {
     const response = await instance.get('/product')
     return response.data

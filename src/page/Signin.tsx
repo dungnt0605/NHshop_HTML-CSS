@@ -1,5 +1,4 @@
 import instance from '@/config/axios'
-import { IProduct } from '@/interface/Products'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 
@@ -40,10 +39,13 @@ const Signin = () => {
           <div className='signin__username forminput'>
             <label htmlFor='email'>Email</label>
             <input type='text' id='email' {...register('email')} />
+            {errors.email && <span className='text-danger '>{errors.email.message}</span> }
           </div>
+
           <div className='signin__password forminput'>
             <label htmlFor='password'>Password</label>
             <input type='password' id='password' {...register('password')} />
+            {errors.password && <span className='text-danger '>{errors.password.message}</span> }
           </div>
           <div className='submit'>
             <button>Login</button>

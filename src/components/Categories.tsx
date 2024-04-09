@@ -1,8 +1,6 @@
 import { IProduct } from '@/interface/Products'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
-import { number } from 'joi'
-import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 const Categories = () => {
