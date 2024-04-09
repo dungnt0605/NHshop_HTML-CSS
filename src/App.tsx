@@ -12,6 +12,7 @@ import ProductManagement from './page/admin/products'
 import ProductAddPage from './page/admin/products/Add'
 import ProductEditpage from './page/admin/products/Edit'
 import NotFout from './page/NotFout'
+import { Toaster } from './components/ui/toaster'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='cart' element={<Cart />} />
           <Route path='detail/:slug' element={<Detailpro />} />
           <Route path='products' element={<Products />} />
+          <Route path='products/:id' element={<Products />} />
           <Route path='signin' element={<Signin />} />
           <Route path='signup' element={<Signup />} />
           <Route path='pay' element={<Pay />} />
@@ -33,6 +35,7 @@ function App() {
         </Route>
         <Route path='*' element={<NotFout />} />
       </Routes>
+      <Toaster />
     </BrowserRouter>
   )
 }

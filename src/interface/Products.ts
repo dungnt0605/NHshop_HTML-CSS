@@ -4,8 +4,8 @@ export interface IProduct {
   slug?: string
   image?: string
   description?: string
-  price?: number
-  discount?: number
+  price: number
+  discount: number
   gallery?: String[]
   quantity?: number
   category?: string

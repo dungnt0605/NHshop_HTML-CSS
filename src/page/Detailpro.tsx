@@ -25,9 +25,9 @@ const Detailpro = () => {
           <div className='detailproduct__main'>
             <div className='detailproduct__images'>
               <ul className='detailproduct__thumbnails'>
-                {proId?.gallery?.map((gal) => (
+                {proId?.gallery?.map((gal: string | undefined) => (
                   <li className='detailproduct__thumbitems'>
-                    <img src={gal} alt='' className='img-fluid ' />
+                    <img src={gal ? gal : ''} alt='' className='img-fluid ' />
                   </li>
                 ))}
               </ul>
@@ -147,10 +147,10 @@ const Detailpro = () => {
           </div>
           <div className='moreinfo__showingImage'>
             <span className='__img'>
-              <img src='https://picsum.photos/285/500' alt='' />
+              <img src='https://picsum.photos/1000/2000' alt='' />
             </span>
             <span className='__img'>
-              <img src='https://picsum.photos/285/500' alt='' />
+              <img src='https://picsum.photos/1000/2000' alt='' />
             </span>
           </div>
         </div>

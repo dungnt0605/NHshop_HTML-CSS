@@ -1,6 +1,18 @@
-import { Header, New } from '@/components'
+import { Categories, Header, New } from '@/components'
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
+import { Link, useParams } from 'react-router-dom'
 
 const Products = () => {
+  const { id } = useParams()
+  const { data: categories } = useQuery({
+    queryKey: ['CATEGORIES_LIST'],
+    queryFn: async () => {
+      const { data } = await axios.get('http://localhost:5170/api/v1/category')
+      return data
+    }
+  })
+  console.log(categories)
   return (
     <div>
       <Header />
@@ -9,6 +21,14 @@ const Products = () => {
           <span className='__filtering'>
             <img src='../assets/icons/filtering.png' alt='' />
             <p>Filter</p>
+            {categories?.map((category: { _id?: number | string; name: string; slug: string }) => (
+              <Link
+                to={`/products/${category._id}`}
+                className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'
+              >
+                {category.name}
+              </Link>
+            ))}
           </span>
           <span className='__gridfil'>
             <img src='../assets/icons/grid.png' alt='' />
@@ -30,7 +50,8 @@ const Products = () => {
         </div>
       </div>
       {/* End Filter  */}
-      <New />
+      {id ? <Categories /> : <New />}
+
       {/* End Prod  */}
       <section className='btnList'>
         <span style={{ display: 'none' }} className='btnList__back'>
